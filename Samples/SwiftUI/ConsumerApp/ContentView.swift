@@ -18,7 +18,7 @@ struct ContentView: View {
     @State var currencyCode = "KES"
     @State var countryCode = "KE"
     @State var countryName = "KENYA"
-    @State var merchantData: TPMerchantModel?
+    @State var merchantData: TPMerchant?
     
     var body: some View {
         NavigationView {

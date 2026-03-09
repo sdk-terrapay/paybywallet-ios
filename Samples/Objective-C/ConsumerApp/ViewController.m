@@ -129,13 +129,13 @@
                                            secondaryColor:@"FFFFFF"];
     
     [[TerraPayWalletClient shared] launchWith: config
-                            completionHandler:^(TerraPayLaunchType launchType,
-                                                TerraPayErrorInfo * _Nullable error,
-                                                TPMerchantModel * _Nullable merchantmodel,
-                                                TPFinalPaymentStatusModel * _Nullable statusModel) {
+                            completionHandler:^(TPLaunchType launchType,
+                                                TPErrorInfo * _Nullable error,
+                                                TPMerchant * _Nullable merchantmodel,
+                                                TPPaymentStatus * _Nullable statusModel) {
         
         switch (launchType) {
-            case TerraPayLaunchTypeOnPINAuthenticate: {
+            case TPLaunchTypeOnPINAuthenticate: {
                 if (merchantmodel != nil) {
                     NSLog(@"%@", merchantmodel);
                     [self showTargetHostScreen:merchantmodel];
@@ -143,24 +143,24 @@
                 break;
             }
 
-            case TerraPayLaunchTypeOnError: {
+            case TPLaunchTypeOnError: {
                 if (error.message != nil) {
                     [self showToastWithMessage:error.message];
                 }
                 break;
             }
 
-            case TerraPayLaunchTypeCancelled: {
+            case TPLaunchTypeCancelled: {
                 [self showToastWithMessage:@"User cancelled."];
                 break;
             }
 
-            case TerraPayLaunchTypeOnPaymentSuccess: {
+            case TPLaunchTypeOnPaymentSuccess: {
                 NSLog(@"Base app: %@", statusModel.description);
                 break;
             }
 
-            case TerraPayLaunchTypeOnPaymentFailure: {
+            case TPLaunchTypeOnPaymentFailure: {
                 if (error != nil) {
                     [self showToastWithMessage:error.message];
                 } else {
@@ -177,7 +177,7 @@
 
 #pragma mark - Navigation
 
-- (void)showTargetHostScreen:(TPMerchantModel *)merchant {
+- (void)showTargetHostScreen:(TPMerchant *)merchant {
     UIStoryboard *stb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *vc = [stb instantiateViewControllerWithIdentifier:[TPPINViewController identifier]];
     if ([vc isKindOfClass:[TPPINViewController class]]) {

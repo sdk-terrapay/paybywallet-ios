@@ -14,6 +14,9 @@ This SDK, provided by TerraPay, enables seamless payment transactions between cu
 - Swift 6+
 - Xcode 15+
 
+## 🛠️ Permissions
+The app’s Info.plist must contain the NSCameraUsageDescription key with a string value explaining to the user how the app uses this data. Example: “This will allow <your-app-name> to scan QR Code."
+
 ## 🔧 Steps to Add a Framework:
 
 ```swift
@@ -43,7 +46,7 @@ This SDK, provided by TerraPay, enables seamless payment transactions between cu
 
 6. Import the SDK in Code
    - Use the following import statement based on your project: 
-    import TerraPaySDK
+    import TerrapayWalletSDK
 
     You can now access the SDK APIs in Swift, SwiftUI, or Objective-C.
 ```
@@ -69,7 +72,7 @@ This SDK, provided by TerraPay, enables seamless payment transactions between cu
 #### 1. Import the SDK
 
 ```swift
-import TerraPaySDK
+import TerrapayWalletSDK
 ```
 
 #### 2. Initialize and Launch the SDK
@@ -103,7 +106,7 @@ TerraPayClient.shared.launch(with: config) { result, error in
 Use below code to process the payment after PIN authentication successful.
 
 ```swift
-TerraPayWalletClient.shared.processPayment(controller: self, transactionId: "TP123456789")
+TerraPayWalletClient.shared.processPayment(controller: self, transactionId: "TP123456789") // transactionId is unique identifier
 ```
 
 ### Objective-C
@@ -111,61 +114,69 @@ TerraPayWalletClient.shared.processPayment(controller: self, transactionId: "TP1
 #### 1. Import the SDK
 
 ```objc
-#import "TerraPaySDK/TerraPaySDK-Swift.h"
+#import "TerraPayWalletSDK/TerraPayWalletSDK-Swift.h"
 ```
 
 #### 2. Initialize and Launch the SDK
 
 ```objc
-TerrapaySDKConfig *config = [[TerrapaySDKConfig alloc] initWithController:self
-                                                                  accessToken:@"YOUR_ACCESS_TOKEN",
-                                                                 refreshToken:@"YOUR_REFRESH_TOKEN",
-                                                                     dialCode:@"+254"
-                                                                       msisdn:@"123456789"
-                                                               subscriberName:@"Giri Babu"
-                                                                   walletName:@"Airtel Money Wallet"
-                                                                     currency:@"KES"
-                                                                  countryCode:@"KE"
-                                                                 primaryColor:@"EC1B24"
-                                                               secondaryColor:@"FFFFFF"
-                                                                        email:@"test@test.com"
-                                                                   topUpLabel:@"Top Up"
-                                                                withdrawLabel:@"Withdraw"
-                                                           termsConditionsUrl:@""];
+ TerraPayWalletSDKConfig *config =
+        [[TerraPayWalletSDKConfig alloc] initWithController:self
+                                          subscriberDialCode:@"+256"
+                                          subscriberCountry:@"UG"
+                                     subscriberCountryName:@"UGANDA"
+                                            subscriberName:@"MTN MoMo"
+                                         subscriberMSISDN:@"766901491"
+                                       subscriberCurrency:@"UGX"
+                                            walletBalance:@"100000"
+                                             primaryColor:@"52B44A"
+                                           secondaryColor:@"FFFFFF"];
     
-    
-[[TerraPayClient shared] launchWith:config completionHandler:^(TerraPayResultType result, TerraPayErrorInfo *error) {
-    switch (result) {
-        case TerraPayResultTypeSuccess:
-            NSLog(@"SDK launched successfully");
-            break;
-        case TerraPayResultTypeCancelled:
-            NSLog(@"User cancelled");
-            break;
-        case TerraPayResultTypeFailure:
-            NSLog(@"Error Code: %@", error.code);
-            NSLog(@"Error Message: %@", error.message);
-            break;
-    }
-}];
+    [[TerraPayWalletClient shared] launchWith: config
+                            completionHandler:^(TPLaunchType launchType,
+                                                TPErrorInfo * _Nullable error,
+                                                TPMerchant * _Nullable merchantmodel,
+                                                TPPaymentStatus * _Nullable statusModel) {
+        
+        switch (launchType) {
+            case TPLaunchTypeOnPINAuthenticate: {
+               
+                break;
+            }
+
+            case TPLaunchTypeOnError: {
+                if (error.message != nil) {
+                    [self showToastWithMessage:error.message];
+                }
+                break;
+            }
+
+            case TPLaunchTypeCancelled: {
+                [self showToastWithMessage:@"User cancelled."];
+                break;
+            }
+
+            case TPLaunchTypeOnPaymentSuccess: {
+                NSLog(@"Base app: %@", statusModel.description);
+                break;
+            }
+
+            case TPLaunchTypeOnPaymentFailure: {
+                if (error != nil) {
+                    [self showToastWithMessage:error.message];
+                } else {
+                    [self showToastWithMessage:@"Something went wrong."];
+                }
+                break;
+            }
+        }
+    }];
 ```
 
-#### 3. Configure url scheme
-
-URL Shemes needs to be configured as "tpwallet" under URL Types. 
-
-// Add below code in AppDelegate.m file
+#### 3. Process Payment after PIN verified
 
 ```objc
-#import "TerraPaySDK/TerraPaySDK-Swift.h"
-
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-            options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
-    
-    [[TerraPayClient shared] handleRedirectWithUrl:url];
-    return YES;
-}
+ [[TerraPayWalletClient shared] processPaymentWithController:self transactionId: "TP123456789"];
 ```
 
 ### SwiftUI
@@ -179,60 +190,58 @@ import TerraPaySDK
 #### 2. Initialize and Launch the SDK
 
 ```SwiftUI
-let config = TerrapaySDKConfig(controller: viewcontroller,
-                                accessToken: "YOUR_ACCESS_TOKEN",
-                                refreshToken: "YOUR_REFRESH_TOKEN",
-                                dialCode: "+254",
-                                msisdn: "123456789",
-                                subscriberName: "Giri Babu",
-                                walletName: "Airtel Money Wallet",
-                                currency: "KES",
-                                countryCode: "KE",
-                                primaryColor: "EC1B24",
-                                secondaryColor: "FFFFFF",
-                                email: "test@test.com",
-                                topUpLabel: "Top-Up",
-                                withdrawLabel: "Withdraw",
-                                termsConditionsUrl: "")
+ guard let rootVC = UIApplication.shared.windows.first?.rootViewController else { return }
+        let config = TerraPayWalletSDKConfig(controller: rootVC,
+                                             subscriberDialCode: dialCode,
+                                             subscriberCountry: countryCode,
+                                             subscriberCountryName: countryName,
+                                             subscriberName: subscriberName,
+                                             subscriberMSISDN: msisdn,
+                                             subscriberCurrency: currencyCode,
+                                             walletBalance: balance,
+                                             primaryColor: "52B44A",
+                                             secondaryColor: "FFFFFF")
 
-TerraPayClient.shared.launch(with: config) { result, error in
-    switch result {
-    case .success: print("SDK launched successfully")
-    case .cancelled: print("User cancelled")
-    case .failure: print("Error: \(error?.message ?? "")")
-    @unknown default: fatalError()
-    }
-}
+        TerraPayWalletClient.shared.launch(with: config) { type, error, merchantDetails, status  in
+            switch type {
+            case .onPINAuthenticate:
+                guard let merchantDetails = merchantDetails else { return }
+                merchantData = merchantDetails
+                //Navigate to PIN Screen
+                break
+            case .onError:
+                print("Error")
+            case .cancelled:
+                print("User cancelled")
+            case .onPaymentSuccess:
+                print("Base app: \(status?.description)")
+            case .onPaymentFailure:
+                guard let error = error else{
+                    print("Something went wrong.")
+                    return
+                }
+                print("Something went wrong.")
+            default:
+                print("Something went wrong.")
+            }
+        }
 ```
-#### 3. Configure url scheme
-
-URL Shemes needs to be configured as "tpwallet" under URL Types. 
-
-// Add below code in View file
+#### 3. Process Payment after PIN verified
 
 ```SwiftUI
-    struct ContentView: View {
-        var body: some View {
-            Text("Hello, SwiftUI!")
-                .onOpenURL { url in
-                    TerraPayClient.shared.handleRedirect(url: url)
-                }
-        }
-    }
+TerraPayWalletClient.shared.processPayment(controller: rootVC, transactionId: "TP123456789")
 ```
-
-
 
 ## 📁 Project Structure
 
 ```
-TerraPaySDK/
-├── Sample/
+Consumer Demo/
+├── Samples/
 │   └── Objective-C/
 │   └── Swift/
 │   └── SwiftUI/
 ├── Sources/
-│   └── TerraPaySDK.xcframework
+│   └── TerraPayWalletSDK.xcframework
 ├── Package.swift
 └── README.md
 ```

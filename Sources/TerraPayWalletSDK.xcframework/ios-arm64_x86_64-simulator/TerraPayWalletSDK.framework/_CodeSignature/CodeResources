@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		TGZmm5M8XfjrlDMmaiiJ9T0e01o=
+		RYSx3Bl/Q+AJQEL4tWGhTMEg/ac=
 		</data>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -38,11 +38,11 @@
 		</data>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		HbSEMlTjip+F7dvYOg3URDoLq/8=
+		LUt2D6nakhj4Hg3Las7/Zm4RBWk=
 		</data>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		TGZmm5M8XfjrlDMmaiiJ9T0e01o=
+		RYSx3Bl/Q+AJQEL4tWGhTMEg/ac=
 		</data>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		0aybyfV5hnzg+IehegXhBelihYM=
+		v109WHg0n8OC8XVBsISZoMSC09M=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -113,7 +113,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HWSbd5N79FqcvjhjuXO9lhsFttIM2IS7NSww31awKGY=
+			5JD/ac+zrvrHlFb3zcNWBtoJYhJudgL68GGf/aHNiHA=
 			</data>
 		</dict>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -141,14 +141,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			g3pCD/hB7ZQwV0pukCtZphdjoZECc9BU1yCpP4dqtxY=
+			WwJmTf8B8yzyEDGutCqUzJvkmZkhC2tIrzrnmJzznSk=
 			</data>
 		</dict>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HWSbd5N79FqcvjhjuXO9lhsFttIM2IS7NSww31awKGY=
+			5JD/ac+zrvrHlFb3zcNWBtoJYhJudgL68GGf/aHNiHA=
 			</data>
 		</dict>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -176,7 +176,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZmgVFVWJq1o3H49wldpqhgTBs7L90COv4qP6UHoAX5U=
+			8d/PsatzuNYAJCr73VD8z2NRYz6sx5tqIN+EDBE7Uts=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

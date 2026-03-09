@@ -25,7 +25,7 @@ struct PINEntryView: View {
             // 1. Teal Background Header
             Color(red: 0.0, green: 0.38, blue: 0.5)
                 .frame(height: 250)
-                .ignoresSafeArea()
+//                .ignoresSafeArea()
             
             VStack(spacing: 0) {
                 // 2. Transaction Info Header
@@ -109,8 +109,9 @@ struct PINEntryView: View {
                     .foregroundColor(.gray)
                     .padding(.vertical)
             }
-        }
+        }.background(Color(white: 0.92).ignoresSafeArea())
     }
+        
     
     func submitPin() {
         // Find the current UIViewController to satisfy the SDK requirement

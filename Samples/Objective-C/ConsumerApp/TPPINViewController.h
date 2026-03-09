@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class TPMerchantModel;
+@class TPMerchant;
 @class TPOTPFieldView;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
     @property (class, nonatomic, readonly) NSString *identifier;
 
 // Set by the presenting controller before showing this screen
-    @property (strong, nonatomic, nullable) TPMerchantModel *merchantInfo;
+    @property (strong, nonatomic, nullable) TPMerchant *merchantInfo;
 
 @end
 
