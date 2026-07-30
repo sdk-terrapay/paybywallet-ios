@@ -9,6 +9,37 @@ This SDK, provided by TerraPay, enables seamless payment transactions between cu
 - Launch SDK with a single entry point.
 - Easily embeddable into any iOS app.
 
+## 🔐 Authentication (OAuth2)
+
+TerraPay SDK requires OAuth2 authentication.
+The partner application must generate both access token and refresh token using the client_credentials flow before launching the SDK.
+
+Token Generation Endpoint
+
+```swift
+POST https://uat-connect.terrapay.com:27211/eig/getToken?subscriberid=subscriberMSISDN
+```
+
+cURL Request
+```swift
+curl --location 'https://uat-connect.terrapay.com:27211/eig/getToken?subscriberid=subscriberMSISDN' \
+--header 'user: MTNSDK#UAT' \
+--header 'password: b80e8ebf1943516770a2b1b6883070f8'
+```
+
+Sample Response
+```swift
+{
+  "status" : "OK",
+  "subStatus" : "Success",
+  "access_token" : "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKd3RUb2tlbiIsImlzcyI6IlRlcnJhUGF5IiwiaWF0IjoxNzg1NDE2MzAxLCJleHAiOjE3ODU0MTY2MDEsInBheWxvYWQiOiJtdG5zZGthcHBzIn0.CuVURSqFSPgSLSci1a0XoGoExEu3LkzR9ErkWhIj_y4",
+  "refresh_token" : "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKd3RUb2tlbiIsImlzcyI6IlRlcnJhUGF5IiwiaWF0IjoxNzg1NDE2MzAxLCJleHAiOjE3ODU1MDI3MDEsInBheWxvYWQiOiJ7XG4gIFwidXNlclwiIDogXCJNVE5TREsjVUFUXCIsXG4gIFwicGFzc3dvcmRcIiA6IFwiYjgwZThlYmYxOTQzNTE2NzcwYTJiMWI2ODgzMDcwZjhcIixcbiAgXCJzdWJzY3JpYmVyaWRcIiA6IFwiIDI1NDQ3Njg2NDgxMlwiXG59XG4ifQ.ronm156RIlJvC1S57ZRLQppmiMv5Rf-GCF1Vdq6T93U",
+  "expiry" : "300"
+}
+```
+
+Note: Both access_token and refresh_token must be passed to the SDK during initialization.
+
 ## 📲 Requirements
 - iOS 13.0+
 - Swift 6+
@@ -56,6 +87,8 @@ The app’s Info.plist must contain the NSCameraUsageDescription key with a stri
 
 ```swift
 ## config params validation as below
+- accessToken               (Required) OAuth2 access token generated from partner backend.
+- refreshToken              (Required) OAuth2 refresh token generated from partner backend.
 - subscriberDialCode        (Required) Must match the pattern ^\+\d+$
 - subscriberCountry         (Required) Must be a valid ISO 3166-1 alpha-2 country code.
 - subscriberCountryName     (Required) Must be a valid ountry name.
@@ -79,6 +112,8 @@ import TerrapayWalletSDK
 
 ```swift
 let config = TerrapaySDKConfig(controller: self,
+                                       accessToken: "YOUR_ACCESS_TOKEN",
+                                       refreshToken: "YOUR_REFRESH_TOKEN",
                                        subscriberDialCode: "+254",
                                        subscriberCountry: "KE",
                                        subscriberCountryName: "KENYA",
@@ -122,6 +157,8 @@ TerraPayWalletClient.shared.processPayment(controller: self, transactionId: "TP1
 ```objc
  TerraPayWalletSDKConfig *config =
         [[TerraPayWalletSDKConfig alloc] initWithController:self
+                                            accessToken:@"YOUR_ACCESS_TOKEN",
+                                            refreshToken:@"YOUR_REFRESH_TOKEN",
                                           subscriberDialCode:@"+256"
                                           subscriberCountry:@"UG"
                                      subscriberCountryName:@"UGANDA"
@@ -192,6 +229,8 @@ import TerraPaySDK
 ```SwiftUI
  guard let rootVC = UIApplication.shared.windows.first?.rootViewController else { return }
         let config = TerraPayWalletSDKConfig(controller: rootVC,
+                                             accessToken: "YOUR_ACCESS_TOKEN",
+                                             refreshToken: "YOUR_REFRESH_TOKEN",
                                              subscriberDialCode: dialCode,
                                              subscriberCountry: countryCode,
                                              subscriberCountryName: countryName,
