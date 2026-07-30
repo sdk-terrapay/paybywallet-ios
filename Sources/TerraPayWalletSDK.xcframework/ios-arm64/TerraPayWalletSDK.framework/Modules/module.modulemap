@@ -7,5 +7,4 @@ framework module TerraPayWalletSDK {
 
 module TerraPayWalletSDK.Swift {
   header "TerraPayWalletSDK-Swift.h"
-  requires objc
 }

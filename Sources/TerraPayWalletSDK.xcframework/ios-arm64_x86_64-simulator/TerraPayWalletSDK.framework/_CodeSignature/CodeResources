@@ -6,11 +6,11 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		0Y20eakDcwnDu9TyO99V17+tXUw=
+		2U1MGTfcJKZ+PuJS8HD7B2XOAMw=
 		</data>
 		<key>Headers/TerraPayWalletSDK-Swift.h</key>
 		<data>
-		VDY3uT8S58i9qKNkQwXvFkhrxF4=
+		BieUCapyTDbm3Y4rjQPOaGm/ZWo=
 		</data>
 		<key>Headers/TerraPayWalletSDK.h</key>
 		<data>
@@ -18,51 +18,51 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		MMljJfgp5hKzZToPAIpDeYf+/U0=
+		89NQDGvuU9uN7WpVurb1I9Gpk9Q=
 		</data>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		RYSx3Bl/Q+AJQEL4tWGhTMEg/ac=
+		PqOU7LQgIXkJlHUVYFvDDs4rPq0=
 		</data>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		XcQ1+cX2guSRrsZj/A7zUzOOMxA=
+		9lcKFe1twrA4GF1iKG+ChQxwKnk=
 		</data>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		lqpBgzSBvvJZIJXrhZWEjPzzwok=
+		rmB6bwuzlfDTUwXSn3T8knVY86I=
 		</data>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		XcQ1+cX2guSRrsZj/A7zUzOOMxA=
+		9lcKFe1twrA4GF1iKG+ChQxwKnk=
 		</data>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		LUt2D6nakhj4Hg3Las7/Zm4RBWk=
+		2drBPEHfhDchq+VXr61PU41qJMM=
 		</data>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		RYSx3Bl/Q+AJQEL4tWGhTMEg/ac=
+		PqOU7LQgIXkJlHUVYFvDDs4rPq0=
 		</data>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		mWa7pir6T/KSG6QtS0zacrfi+V4=
+		BouWxQ9YrXaMimKGn9dq7WGEDZk=
 		</data>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Qwn7I4jyMQgfQZVEIUrhvjZfHhk=
+		G615InrDwDbjmPt4J877ZBdR0GA=
 		</data>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		mWa7pir6T/KSG6QtS0zacrfi+V4=
+		BouWxQ9YrXaMimKGn9dq7WGEDZk=
 		</data>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		v109WHg0n8OC8XVBsISZoMSC09M=
+		eCqqazfFGem5KpcqxodOv/ZEeys=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		AAnGc/a1lBjTQuIxZieH4fSJ07c=
+		gCs3C0196MgzgVrDd4i897kHP8s=
 		</data>
 		<key>Roboto-Bold.ttf</key>
 		<data>
@@ -80,7 +80,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rPmn/ozzakkJzEfNH0OoHfq60UQ=
+			EqFtyxce5Gp7OdZVXMW8lDIUrkw=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -92,14 +92,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mWdrYEYS5nLZ/mGhACJKHoHZeKsqOufkMgGuEUMOXE8=
+			MTBpJzMXer+qjHiajIywKRuW6xnnoavvPaR5/vjwt24=
 			</data>
 		</dict>
 		<key>Headers/TerraPayWalletSDK-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			T6O43YgQHuaAXM4u2tr6A1HRWa6k2h5YjXwRKboW2mE=
+			C/J226bR0XU/+vIvmsK5awOQBRLvdzMcPKqm8g8tv3M=
 			</data>
 		</dict>
 		<key>Headers/TerraPayWalletSDK.h</key>
@@ -113,77 +113,77 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5JD/ac+zrvrHlFb3zcNWBtoJYhJudgL68GGf/aHNiHA=
+			SAq+tubk7rOfq9z3tkiVXSklLdYDuklGIlpqqd3qw0A=
 			</data>
 		</dict>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zALbReQx0duXgtodZllPBbUvdPNCVu1iXrZzC9iyY1o=
+			xEir+OenXgsPyvQvAm1uPUw9twf5NUJ9ZNprV381zrE=
 			</data>
 		</dict>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2OpkHQl/bWvTGf54Nb6jSdqrJXUXVj+Ic9hdq4+32vY=
+			RBZIDdcJONd9F+z7j4fXPHb4VH3CRLuV7XeiwBWSNpY=
 			</data>
 		</dict>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zALbReQx0duXgtodZllPBbUvdPNCVu1iXrZzC9iyY1o=
+			xEir+OenXgsPyvQvAm1uPUw9twf5NUJ9ZNprV381zrE=
 			</data>
 		</dict>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WwJmTf8B8yzyEDGutCqUzJvkmZkhC2tIrzrnmJzznSk=
+			P8P15Hy2fNE+a0O+Cd5ikrmupfc6zmhGmymWNECL2LI=
 			</data>
 		</dict>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5JD/ac+zrvrHlFb3zcNWBtoJYhJudgL68GGf/aHNiHA=
+			SAq+tubk7rOfq9z3tkiVXSklLdYDuklGIlpqqd3qw0A=
 			</data>
 		</dict>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9zoe/rz4Hut1v7AjzF1lOXir76HGZXdqY/M1GJSdqDE=
+			A/kJAHa7KmPG27tVb5hfLMC3Lqylxeh48QFhXSgWDio=
 			</data>
 		</dict>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ik3p136OS2GE1MWRFi/Tci0ybCY4cx9PSkdHTEGlb2A=
+			qg0rKnVmVhv8EYdKEjQtx1ID6z2EorCliZqC3kKFcuQ=
 			</data>
 		</dict>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9zoe/rz4Hut1v7AjzF1lOXir76HGZXdqY/M1GJSdqDE=
+			A/kJAHa7KmPG27tVb5hfLMC3Lqylxeh48QFhXSgWDio=
 			</data>
 		</dict>
 		<key>Modules/TerraPayWalletSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8d/PsatzuNYAJCr73VD8z2NRYz6sx5tqIN+EDBE7Uts=
+			rvNbifnQLk80h2xSi9K5+hRhJLD32jYgkTf+1g6Da1w=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rYWggKnY8sQ20vxthlZlSiCXlp/WqR1mOP4WoP/imbg=
+			Ff9baI3/ixdeNURuwjOr8/H28tF+n7eOfqodN+B3rGc=
 			</data>
 		</dict>
 		<key>Roboto-Bold.ttf</key>
@@ -211,7 +211,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8WUlqBP0yPEkljfDTvMf+uKKsVPqf3CrhZVnGXBpv7U=
+			li2Qq8TXbPGossoL6upZJRwmFBXDWQD2LswkrqEa4MM=
 			</data>
 			<key>optional</key>
 			<true/>
