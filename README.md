@@ -23,8 +23,8 @@ POST https://uat-connect.terrapay.com:27211/eig/getToken?subscriberid=subscriber
 cURL Request
 ```swift
 curl --location 'https://uat-connect.terrapay.com:27211/eig/getToken?subscriberid=subscriberMSISDN' \
---header 'user: MTNSDK#UAT' \
---header 'password: b80e8ebf1943516770a2b1b6883070f8'
+--header 'user: xxxxxx' \
+--header 'password: xxxxxxx'
 ```
 
 Sample Response
@@ -32,8 +32,8 @@ Sample Response
 {
   "status" : "OK",
   "subStatus" : "Success",
-  "access_token" : "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKd3RUb2tlbiIsImlzcyI6IlRlcnJhUGF5IiwiaWF0IjoxNzg1NDE2MzAxLCJleHAiOjE3ODU0MTY2MDEsInBheWxvYWQiOiJtdG5zZGthcHBzIn0.CuVURSqFSPgSLSci1a0XoGoExEu3LkzR9ErkWhIj_y4",
-  "refresh_token" : "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKd3RUb2tlbiIsImlzcyI6IlRlcnJhUGF5IiwiaWF0IjoxNzg1NDE2MzAxLCJleHAiOjE3ODU1MDI3MDEsInBheWxvYWQiOiJ7XG4gIFwidXNlclwiIDogXCJNVE5TREsjVUFUXCIsXG4gIFwicGFzc3dvcmRcIiA6IFwiYjgwZThlYmYxOTQzNTE2NzcwYTJiMWI2ODgzMDcwZjhcIixcbiAgXCJzdWJzY3JpYmVyaWRcIiA6IFwiIDI1NDQ3Njg2NDgxMlwiXG59XG4ifQ.ronm156RIlJvC1S57ZRLQppmiMv5Rf-GCF1Vdq6T93U",
+  "access_token" : "your_access_token",
+  "refresh_token" : "your_refresh_token",
   "expiry" : "300"
 }
 ```
